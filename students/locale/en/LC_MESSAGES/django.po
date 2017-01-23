@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-23 14:06+0200\n"
+"POT-Creation-Date: 2017-01-23 17:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models/group.py:8 models/student.py:36 templates/students/base.html:27
+#: models/group.py:8 models/student.py:35 templates/students/base.html:27
 #: templates/students/stud.html:40
+#: templates/students/students_add_edit.html:113
 msgid "group"
 msgstr ""
 
@@ -26,39 +27,40 @@ msgstr ""
 msgid "groups"
 msgstr ""
 
-#: models/student.py:8
+#: models/student.py:7
 msgid "Student"
 msgstr ""
 
-#: models/student.py:9 templates/students/base.html:43
+#: models/student.py:8 templates/students/base.html:43
 msgid "Students"
 msgstr ""
 
-#: models/student.py:13 templates/students/stud.html:33
+#: models/student.py:12 templates/students/stud.html:33
 msgid "first_name"
 msgstr ""
 
-#: models/student.py:17
+#: models/student.py:16
 msgid "last_name"
 msgstr ""
 
-#: models/student.py:21
+#: models/student.py:20 templates/students/students_add_edit.html:58
 msgid "surname"
 msgstr ""
 
-#: models/student.py:25
+#: models/student.py:24 templates/students/students_add_edit.html:70
 msgid "birthday"
 msgstr ""
 
-#: models/student.py:29 templates/students/stud.html:22
+#: models/student.py:28 templates/students/stud.html:22
+#: templates/students/students_add_edit.html:83
 msgid "photo"
 msgstr ""
 
-#: models/student.py:34
+#: models/student.py:33 templates/students/students_add_edit.html:101
 msgid "ticket"
 msgstr ""
 
-#: models/student.py:42
+#: models/student.py:41
 msgid "Additional notes"
 msgstr ""
 
@@ -91,7 +93,9 @@ msgstr ""
 msgid "log journal"
 msgstr ""
 
-#: templates/students/stud.html:4 templates/students/students_delete.html:4
+#: templates/students/stud.html:4 templates/students/students_add_edit.html:3
+#: templates/students/students_add_edit.html:7
+#: templates/students/students_delete.html:4
 msgid "students"
 msgstr ""
 
@@ -104,6 +108,7 @@ msgid "add student"
 msgstr ""
 
 #: templates/students/stud.html:25
+#: templates/students/students_add_edit.html:46
 msgid "last name"
 msgstr ""
 
@@ -123,20 +128,56 @@ msgstr ""
 msgid "students_delete"
 msgstr ""
 
+#: templates/students/students_add_edit.html:11
+msgid "editing of student"
+msgstr ""
+
+#: templates/students/students_add_edit.html:13
+msgid "adding of students"
+msgstr ""
+
+#: templates/students/students_add_edit.html:19
+msgid "please, correct next errors!"
+msgstr ""
+
+#: templates/students/students_add_edit.html:33
+msgid "first name"
+msgstr ""
+
+#: templates/students/students_add_edit.html:88
+#: templates/students/students_delete.html:21
+msgid "delete"
+msgstr ""
+
+#: templates/students/students_add_edit.html:117
+#: templates/students/students_add_edit.html:126
+msgid "select group"
+msgstr ""
+
+#: templates/students/students_add_edit.html:136
+msgid "additional information"
+msgstr ""
+
+#: templates/students/students_add_edit.html:152
+#: templates/students/students_add_edit.html:157
+#: templates/students/students_delete.html:24
+msgid "cancel"
+msgstr ""
+
+#: templates/students/students_add_edit.html:154
+msgid "add"
+msgstr ""
+
+#: templates/students/students_add_edit.html:162
+msgid "Fields marked with an asterisk are obligatory for filling"
+msgstr ""
+
 #: templates/students/students_delete.html:5
 msgid "deleting student"
 msgstr ""
 
 #: templates/students/students_delete.html:12
 msgid "Do you really want to delete group:"
-msgstr ""
-
-#: templates/students/students_delete.html:21
-msgid "delete"
-msgstr ""
-
-#: templates/students/students_delete.html:24
-msgid "cancel"
 msgstr ""
 
 #: view/student.py:51

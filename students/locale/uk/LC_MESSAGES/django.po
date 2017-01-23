@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-23 14:06+0200\n"
+"POT-Creation-Date: 2017-01-23 17:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: models/group.py:8 models/student.py:36 templates/students/base.html:27
+#: models/group.py:8 models/student.py:35 templates/students/base.html:27
 #: templates/students/stud.html:40
+#: templates/students/students_add_edit.html:113
 msgid "group"
 msgstr "група"
 
@@ -28,39 +29,40 @@ msgstr "група"
 msgid "groups"
 msgstr "групи"
 
-#: models/student.py:8
+#: models/student.py:7
 msgid "Student"
 msgstr "Cтудент"
 
-#: models/student.py:9 templates/students/base.html:43
+#: models/student.py:8 templates/students/base.html:43
 msgid "Students"
 msgstr "студенти"
 
-#: models/student.py:13 templates/students/stud.html:33
+#: models/student.py:12 templates/students/stud.html:33
 msgid "first_name"
 msgstr "імя"
 
-#: models/student.py:17
+#: models/student.py:16
 msgid "last_name"
 msgstr "прізвище"
 
-#: models/student.py:21
+#: models/student.py:20 templates/students/students_add_edit.html:58
 msgid "surname"
 msgstr "прізвище"
 
-#: models/student.py:25
+#: models/student.py:24 templates/students/students_add_edit.html:70
 msgid "birthday"
 msgstr "дата народження1"
 
-#: models/student.py:29 templates/students/stud.html:22
+#: models/student.py:28 templates/students/stud.html:22
+#: templates/students/students_add_edit.html:83
 msgid "photo"
 msgstr "фото1"
 
-#: models/student.py:34
+#: models/student.py:33 templates/students/students_add_edit.html:101
 msgid "ticket"
 msgstr "білет"
 
-#: models/student.py:42
+#: models/student.py:41
 msgid "Additional notes"
 msgstr "дадаткові записи"
 
@@ -95,7 +97,9 @@ msgstr "звязатися"
 msgid "log journal"
 msgstr "журнал дій"
 
-#: templates/students/stud.html:4 templates/students/students_delete.html:4
+#: templates/students/stud.html:4 templates/students/students_add_edit.html:3
+#: templates/students/students_add_edit.html:7
+#: templates/students/students_delete.html:4
 msgid "students"
 msgstr "студенти"
 
@@ -108,6 +112,7 @@ msgid "add student"
 msgstr "додати студента"
 
 #: templates/students/stud.html:25
+#: templates/students/students_add_edit.html:46
 #, fuzzy
 #| msgid "last_name"
 msgid "last name"
@@ -129,6 +134,60 @@ msgstr "редагувати"
 msgid "students_delete"
 msgstr "видалити студента"
 
+#: templates/students/students_add_edit.html:11
+#, fuzzy
+#| msgid "deleting student"
+msgid "editing of student"
+msgstr "видалити студента"
+
+#: templates/students/students_add_edit.html:13
+#, fuzzy
+#| msgid "Base of students"
+msgid "adding of students"
+msgstr "База студентів"
+
+#: templates/students/students_add_edit.html:19
+msgid "please, correct next errors!"
+msgstr ""
+
+#: templates/students/students_add_edit.html:33
+#, fuzzy
+#| msgid "first_name"
+msgid "first name"
+msgstr "імя"
+
+#: templates/students/students_add_edit.html:88
+#: templates/students/students_delete.html:21
+msgid "delete"
+msgstr "видалити"
+
+#: templates/students/students_add_edit.html:117
+#: templates/students/students_add_edit.html:126
+#, fuzzy
+#| msgid "Select a group"
+msgid "select group"
+msgstr "виберіть групу"
+
+#: templates/students/students_add_edit.html:136
+#, fuzzy
+#| msgid "Additional notes"
+msgid "additional information"
+msgstr "дадаткові записи"
+
+#: templates/students/students_add_edit.html:152
+#: templates/students/students_add_edit.html:157
+#: templates/students/students_delete.html:24
+msgid "cancel"
+msgstr "скасувати"
+
+#: templates/students/students_add_edit.html:154
+msgid "add"
+msgstr ""
+
+#: templates/students/students_add_edit.html:162
+msgid "Fields marked with an asterisk are obligatory for filling"
+msgstr ""
+
 #: templates/students/students_delete.html:5
 msgid "deleting student"
 msgstr "видалити студента"
@@ -136,14 +195,6 @@ msgstr "видалити студента"
 #: templates/students/students_delete.html:12
 msgid "Do you really want to delete group:"
 msgstr "Ви дійсно бажаєте видалити студента:"
-
-#: templates/students/students_delete.html:21
-msgid "delete"
-msgstr "видалити"
-
-#: templates/students/students_delete.html:24
-msgid "cancel"
-msgstr "скасувати"
 
 #: view/student.py:51
 msgid "First Name field is required"
