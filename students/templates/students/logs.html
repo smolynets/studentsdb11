@@ -1,0 +1,67 @@
+{% extends "students/base.html" %}
+{% load static from staticfiles %}
+{% block meta_title %}Студенти{% endblock meta_title %}
+{% block title %}Журнал подій{% endblock title %}
+{% block content %}
+
+<!-- Start Students Listing -->
+<table class="table">
+
+{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+<thead>
+<tr>
+<th>
+<a href="{% url "logs" %}">
+#
+</a>
+</th>
+<th>
+<a href="{% url "logs" %}">
+Рівень
+</a>
+</th>
+<th>
+<a href="{% url "logs" %}">
+Час
+</th>
+<th>
+<a href="{% url "logs" %}">
+Деталі
+</a>
+</th>
+</thead>
+{% endwith %}
+
+<tbody>
+{% for log in logs %}
+<tr>
+<td>{{ forloop.counter }}</td>
+<td>{{ log.level }}</td>
+<td>{{ log.asctime }}</td>
+<td>{{ log.message }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<!-- End Students Listing -->
+{% if logs.has_other_pages %}
+{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+<nav>
+<ul class="pagination">
+<li>
+<a href="{% url "logs" %}?page=1&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&laquo;</a>
+</li>
+{% for p in logs.paginator.page_range %}
+<li {% if logs.number == p %}class="active"{% endif %}>
+<a href="{% url "logs" %}?page={{ p }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">{{ p }}</a>
+</li>
+{% endfor %}
+<li>
+<a href="{% url "logs" %}?page={{ logs.paginator.num_pages}}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">
+&raquo;</a>
+</li>
+</ul>
+</nav>
+{% endwith %}
+{% endif %}
+{% endblock content %}

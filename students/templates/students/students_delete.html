@@ -1,0 +1,29 @@
+{% extends "students/base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
+{% block title %}{% trans "deleting student" %} {{student.first_name}} {{student.last_name}}{% endblock title %}
+{% block status_message %}
+{% if errors %}
+
+{% endif %}
+{% endblock status_message %}
+{% block content %}
+<p>{% trans "Do you really want to delete group:" %} {{ student }}?</p>
+<p></p>
+<form action="{% url "students_delete" pk %}" method="post"
+enctype="multipart/form-data" role="form" class="form-horizontal">
+{% csrf_token %}
+
+<div class="form-group">
+<label class="col-sm-2 control-label"></label>
+<div class="col-sm-10">
+<input type="submit" value="{% trans "delete" %}" name="yes"
+class="btn btn-primary" />
+<button type="submit" name="cancel_button"
+class="btn btn-link">{% trans "cancel" %}</button>
+</div>
+</div>
+</form>
+<p></p>
+{% endblock content %}

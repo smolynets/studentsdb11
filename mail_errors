@@ -1,0 +1,30 @@
+ERROR 2016-11-26 21:22:21,144 contact_admin: Під час відправки листа виникла непередбачувана помилка.
+Traceback (most recent call last):
+  File "/home/oleh/virt/studentsdb/src/studentsdb/students/view/contact_admin.py", line 49, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/__init__.py", line 62, in send_mail
+    return mail.send()
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/message.py", line 286, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 92, in send_messages
+    new_conn_created = self.open()
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 59, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials d16sm10777210lfj.14 - gsmtp')
+ERROR 2016-11-26 21:22:21,145 contact_admin: Під час відправки листа виникла непередбачувана помилка.
+Traceback (most recent call last):
+  File "/home/oleh/virt/studentsdb/src/studentsdb/students/view/contact_admin.py", line 49, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/__init__.py", line 62, in send_mail
+    return mail.send()
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/message.py", line 286, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 92, in send_messages
+    new_conn_created = self.open()
+  File "/home/oleh/virt/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 59, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials d16sm10777210lfj.14 - gsmtp')
