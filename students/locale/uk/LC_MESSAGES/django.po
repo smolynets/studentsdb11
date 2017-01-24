@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-23 17:19+0200\n"
+"POT-Creation-Date: 2017-01-24 13:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,8 +76,6 @@ msgid "Students acounting service of school"
 msgstr "Сервіс обліку  студентів школи"
 
 #: templates/students/base.html:29
-#, fuzzy
-#| msgid "Students"
 msgid "all students"
 msgstr "всі студенти"
 
@@ -135,8 +133,6 @@ msgid "students_delete"
 msgstr "видалити студента"
 
 #: templates/students/students_add_edit.html:11
-#, fuzzy
-#| msgid "deleting student"
 msgid "editing of student"
 msgstr "видалити студента"
 
@@ -148,7 +144,7 @@ msgstr "База студентів"
 
 #: templates/students/students_add_edit.html:19
 msgid "please, correct next errors!"
-msgstr ""
+msgstr "Будь-ласка, виправте  наступні  помилки!"
 
 #: templates/students/students_add_edit.html:33
 #, fuzzy

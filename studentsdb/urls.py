@@ -18,6 +18,10 @@ from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 from students.view.journal import JournalView
 
+js_info_dict = {
+'packages': ('students',),
+}
+
 urlpatterns = patterns('',
 # Students urls
 url(r'^$', 'students.view.student.students_list', name='main'),
@@ -49,6 +53,8 @@ url(r'^logs$', 'students.view.logs.logs', name='logs'),
 # Contact Admin Form
 url(r'^contact-admin/$', 'students.view.contact_admin.contact_admin',
 name='contact_admin'),
+#i18n of js
+url(r'^jsi18n.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
 )
 if DEBUG:
  # serve files from media folder

@@ -60,3 +60,12 @@ def get_current_group(request):
       return group
   else:
     return None
+
+
+
+
+
+def get_lang(request):
+  pk = request.COOKIES.get('current_lang')
+
+  
