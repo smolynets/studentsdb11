@@ -117,7 +117,8 @@ STATIC_URL = '/static/'
 TEMPLATE_CONTEXT_PROCESSORS = \
 global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 "django.core.context_processors.request",
-"students.context_processors.groups_processor"
+"students.context_processors.groups_processor",
+"students.context_processors.lang_processor"
 )
 
 MEDIA_URL = '/media/'

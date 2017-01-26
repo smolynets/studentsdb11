@@ -67,5 +67,6 @@ def get_current_group(request):
 
 def get_lang(request):
   pk = request.COOKIES.get('current_lang')
+  return pk
 
   

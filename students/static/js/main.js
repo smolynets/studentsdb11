@@ -110,9 +110,26 @@ function initEditStudentForm(form, modal) {
     }
 
 
+
+
+function initLangSelector() {
+    $('#lang-selector select').change(function(event){
+        var lan = $(this).val();
+        if (lan) {
+            $.cookie('current_lang', lan, {'path': '/', 'expires': 365});
+        } else {
+            $.removeCookie('current_lang', {'path': '/'});
+        }
+        location.reload(true);
+        return true;
+     });
+    }
+
+
 $(document).ready(function(){
     initJournal();
     initGroupSelector();
     initDateFields();
     initEditStudentPage();
+    initLangSelector();
 });

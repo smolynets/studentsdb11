@@ -16,21 +16,24 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
+
 <!-- Start Container -->
 <div class="container">
+<div class="col-xs-4" id="lang-selector"> 
+<select> 
+<option value="">{{PK}}</option>
+<option value="uk">укр</option>
+<option value="en">eng</option>  
+</select> 
+</div>
+{{PK}}
 <!-- Start Header -->
 <div class="row" id="header">
 <div class="col-xs-8">
 <h1>{% trans "Students acounting service" %}</h1>
 </div>
-<div>
-  <button type="submit" name="lang" value="uk" 
-    class="btn btn-link">укр 
-  </button>
-  <button type="submit" name="lang" value="en" 
-    class="btn btn-link">eng
-  </button>
-  </div>
+
+
 <div class="col-xs-4" id="group-selector">
 <strong>{% trans "group" %}:</strong> 
 <select> 
