@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render
 from django import forms
 from django.core.mail import send_mail
@@ -24,14 +24,14 @@ class ContactForm(forms.Form):
      self.helper.label_class = 'col-sm-2 control-label'
      self.helper.field_class = 'col-sm-10'
      # form buttons
-     self.helper.add_input(Submit('send_button', u'Надіслати'))
+     self.helper.add_input(Submit('send_button', _(u'Send')))
   from_email = forms.EmailField(
-    label=u"Ваша Емейл Адреса")
+    label=_(u"Your email"))
   subject = forms.CharField(
-    label=u"Заголовок листа",
+    label=_(u"Title of list"),
     max_length=128)
   message = forms.CharField(
-    label=u"Текст повідомлення",
+    label=_(u"Text of massage"),
     max_length=2560,
     widget=forms.Textarea)
 def contact_admin(request):
@@ -48,11 +48,11 @@ def contact_admin(request):
       try:
         send_mail(subject, message, from_email, [ADMIN_EMAIL])
       except Exception:
-        message = u'Під час відправки листа виникла непередбачувана помилка.'
+        message = _(u'When you send a letter to an unexpected error occurred.')
         logger = logging.getLogger(__name__)
         logger.exception(message)
       else:
-        message = u'Повідомлення успішно надіслане!'
+        message = _(u'Massage succefuly sended!')
       # redirect to same contact page with success message
       return HttpResponseRedirect(u'%s?status_message=%s' % (reverse('contact_admin'),message))
   # if there was not POST render blank form

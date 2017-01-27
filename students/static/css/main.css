@@ -65,3 +65,7 @@ th.day-header {
 .modal-content{
    background: #00FFFF;	
 }
+
+#lang-selector{
+	padding-top: 18px;
+}

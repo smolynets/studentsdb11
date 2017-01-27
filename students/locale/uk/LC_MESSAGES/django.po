@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 06:59+0200\n"
+"POT-Creation-Date: 2017-01-27 22:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,44 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: models/group.py:8 models/student.py:35 templates/students/base.html:38
+#: apps.py:8
+#, fuzzy
+#| msgid "students base"
+msgid "Students base"
+msgstr "база студентів"
+
+#: correct_admin.py:19
+#, fuzzy
+#| msgid "The student is the head of another group"
+msgid "Student is leader of other group."
+msgstr "студент є старостою іншої групи"
+
+#: models/exam.py:6
+msgid "Exam"
+msgstr "Екзамен"
+
+#: models/exam.py:7
+#, fuzzy
+#| msgid "exams"
+msgid "Exams"
+msgstr "екзамени"
+
+#: models/exam.py:11 models/group.py:11 templates/students/exam_add.html:18
+#: templates/students/exam_edit.html:18 templates/students/exams.html:24
+msgid "name"
+msgstr "імя"
+
+#: models/exam.py:13
+#, fuzzy
+#| msgid "group"
+msgid "Group"
+msgstr "група"
+
+#: models/exam.py:19
+msgid "dates"
+msgstr "дати"
+
+#: models/group.py:6 models/student.py:35 templates/students/base.html:38
 #: templates/students/exam_add.html:31 templates/students/exam_edit.html:25
 #: templates/students/exams.html:32 templates/students/groups_one.html:40
 #: templates/students/groups_one_null.html:5 templates/students/grup.html:31
@@ -28,14 +65,35 @@ msgstr ""
 msgid "group"
 msgstr "група"
 
-#: models/group.py:9 templates/students/base.html:56
+#: models/group.py:7 templates/students/base.html:56
 #: templates/students/grup.html:5
 msgid "groups"
 msgstr "групи"
 
-#: models/student.py:7
+#: models/group.py:13 templates/students/groups_add_edit.html:43
+#: templates/students/grup.html:39
+msgid "leader"
+msgstr "староста"
+
+#: models/group.py:19 models/student.py:41
+msgid "Additional notes"
+msgstr "дадаткові записи"
+
+#: models/monthjournal.py:6
+msgid "Monthly journal"
+msgstr "Місячний журнал"
+
+#: models/monthjournal.py:7
+msgid "Monthly journals"
+msgstr "Місячні журнали"
+
+#: models/monthjournal.py:10 models/student.py:7
 msgid "Student"
 msgstr "Cтудент"
+
+#: models/monthjournal.py:14
+msgid "Date"
+msgstr "Дата"
 
 #: models/student.py:8 templates/students/base.html:54
 msgid "Students"
@@ -65,10 +123,6 @@ msgstr "фото"
 #: models/student.py:33 templates/students/students_add_edit.html:101
 msgid "ticket"
 msgstr "білет"
-
-#: models/student.py:41
-msgid "Additional notes"
-msgstr "дадаткові записи"
 
 #: templates/students/base.html:7 templates/students/base.html.py:33
 #: templates/students/base.html:82
@@ -127,15 +181,8 @@ msgid "Please, correct next errors!"
 msgstr "Будь-ласка, виправте  наступні  помилки!"
 
 #: templates/students/exam_add.html:5
-#, fuzzy
-#| msgid "Base of students"
 msgid "adding exams"
-msgstr "База студентів"
-
-#: templates/students/exam_add.html:18 templates/students/exam_edit.html:18
-#: templates/students/exams.html:24
-msgid "name"
-msgstr "імя"
+msgstr "Додавання екзаменів"
 
 #: templates/students/exam_add.html:49
 msgid "exampel"
@@ -166,7 +213,7 @@ msgstr "Поля зі  знаком  зірочки обовязкові для 
 
 #: templates/students/exam_delete.html:5
 msgid "deleting of exam"
-msgstr "видалити екзамену"
+msgstr "видалити екзамен"
 
 #: templates/students/exam_delete.html:12
 msgid "Do yuo realy to want delete"
@@ -236,10 +283,6 @@ msgstr "дадаткові записи"
 msgid "editing group"
 msgstr "редагувати студента"
 
-#: templates/students/groups_add_edit.html:43 templates/students/grup.html:39
-msgid "leader"
-msgstr "староста"
-
 #: templates/students/groups_add_edit.html:85
 msgid ""
 "To make the head of the student must first add it to this group in the "
@@ -302,11 +345,11 @@ msgstr "Іде збереження"
 
 #: templates/students/journal.html:19
 msgid "previous month"
-msgstr ""
+msgstr "попередній місяць"
 
 #: templates/students/journal.html:23
 msgid "next month"
-msgstr "попередній  місяць"
+msgstr "наступний  місяць"
 
 #: templates/students/journal.html:30
 msgid "student"
@@ -338,7 +381,7 @@ msgstr "видалити студента"
 
 #: templates/students/students_add_edit.html:11
 msgid "editing of student"
-msgstr "видалити студента"
+msgstr "редагування студента"
 
 #: templates/students/students_add_edit.html:13
 msgid "adding of students"
@@ -367,11 +410,27 @@ msgstr "видалити студента"
 
 #: templates/students/students_delete.html:12
 msgid "Do you really want to delete group:"
-msgstr "Ви дійсно бажаєте видалити студента:"
+msgstr "Ви дійсно бажаєте видалити групу:"
 
 #: util.py:77
 msgid "ukrainian"
 msgstr "українська"
+
+#: view/contact_admin.py:29
+msgid "Your email"
+msgstr "ваша електрона пошта"
+
+#: view/contact_admin.py:31
+msgid "Title of list"
+msgstr "Заголовок листа"
+
+#: view/contact_admin.py:34
+msgid "Text of massage"
+msgstr "Текст повідомлення"
+
+#: view/contact_admin.py:55
+msgid "Massage succefuly sended!"
+msgstr "Повідомлення успішно відіслано"
 
 #: view/exams.py:49 view/student.py:132
 msgid "Name is mandatory"
@@ -390,10 +449,8 @@ msgid "Enter the correct date format (eg. 1986-03-23)"
 msgstr "введіть коректну  дату (нар.1986-03-23)"
 
 #: view/exams.py:74
-#, fuzzy
-#| msgid "Students successfully added"
 msgid "Exam successfully added"
-msgstr "студента додано успішно"
+msgstr "екзамен додано успішно"
 
 #: view/exams.py:81
 #, fuzzy
@@ -401,39 +458,67 @@ msgstr "студента додано успішно"
 msgid "Adding Students canceled"
 msgstr "додавання студента скасовано"
 
-#: view/exams.py:112
+#: view/exams.py:112 view/group.py:93
 #, fuzzy
 #| msgid "Name is mandatory"
 msgid "Name is mandatory."
 msgstr "імя є обовязковим"
 
 #: view/exams.py:124
-#, fuzzy
-#| msgid "Name is mandatory"
 msgid "Birthday is mandatory."
-msgstr "імя є обовязковим"
+msgstr "дата народження є обовязковою"
 
 #: view/exams.py:134
-#, fuzzy
-#| msgid "editing of exam"
 msgid "editing of exam finished"
-msgstr "редагування екзамену"
+msgstr "редагування екзамену завершено"
 
 #: view/exams.py:137
-#, fuzzy
-#| msgid "editing of exam"
 msgid "editing of exam canceled"
-msgstr "редагування екзамену"
+msgstr "редагування екзамену скасовано"
 
 #: view/exams.py:152
 msgid "Exam deleted succefully"
-msgstr ""
+msgstr "Екзамен видалено успішно"
 
 #: view/exams.py:154
-#, fuzzy
-#| msgid "deleting of exam"
 msgid "Deleting of exam canceled"
-msgstr "видалити екзамену"
+msgstr "видалення екзамену скасовано"
+
+#: view/group.py:49
+msgid "Name of group is mandatory."
+msgstr "імя групи є обовязковим"
+
+#: view/group.py:58
+msgid "Group added succefully"
+msgstr "Групу додано успішно"
+
+#: view/group.py:65
+msgid "adding group canceled"
+msgstr "додавання групи скасовано"
+
+#: view/group.py:99
+msgid "Name of leader is mandatory."
+msgstr "імя старости є обовязковим"
+
+#: view/group.py:105
+msgid "Editing of group canceled. Group hasnt student"
+msgstr "Редагування групи скасовано. Група не місить студентів"
+
+#: view/group.py:113
+msgid "Group edited succefully"
+msgstr "Група редагована успішно"
+
+#: view/group.py:120
+msgid "Editing group canceled"
+msgstr "Редагування групи скасовано"
+
+#: view/group.py:134
+msgid "Group deleted succefully"
+msgstr "Групу видалено успішно"
+
+#: view/group.py:138
+msgid "Deleting group canceled"
+msgstr "видалення екзамену скасовано"
 
 #: view/student.py:51
 msgid "First Name field is required"

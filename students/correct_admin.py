@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from django.utils.translation import ugettext as _
 from .models.group import Group
 from .models.exam import Exam
 from django.contrib import admin
@@ -16,7 +16,7 @@ class StudentFormAdmin(ModelForm):
         # get group where current student is a leader
         groups = Group.objects.filter(leader=self.instance)
         if len(groups) > 0 and self.cleaned_data['student_group_id'] != groups[0].id:
-            raise ValidationError(u'Студент є старостою іншої групи.',
+            raise ValidationError(_(u'Student is leader of other group.'),
                 code='invalid')
 
         return self.cleaned_data['student_group_id']
