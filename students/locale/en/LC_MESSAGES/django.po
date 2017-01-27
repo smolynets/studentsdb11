@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 04:50+0200\n"
+"POT-Creation-Date: 2017-01-27 06:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -355,6 +355,50 @@ msgstr ""
 msgid "ukrainian"
 msgstr ""
 
+#: view/exams.py:49 view/student.py:132
+msgid "Name is mandatory"
+msgstr ""
+
+#: view/exams.py:54 view/exams.py:118
+msgid "Group is mandatory!"
+msgstr ""
+
+#: view/exams.py:64
+msgid "Enter the correct date format (eg. 1986-03-23)"
+msgstr ""
+
+#: view/exams.py:74
+msgid "Exam successfully added"
+msgstr ""
+
+#: view/exams.py:81
+msgid "Adding Students canceled"
+msgstr ""
+
+#: view/exams.py:112
+msgid "Name is mandatory."
+msgstr ""
+
+#: view/exams.py:124
+msgid "Birthday is mandatory."
+msgstr ""
+
+#: view/exams.py:134
+msgid "editing of exam finished"
+msgstr ""
+
+#: view/exams.py:137
+msgid "editing of exam canceled"
+msgstr ""
+
+#: view/exams.py:152
+msgid "Exam deleted succefully"
+msgstr ""
+
+#: view/exams.py:154
+msgid "Deleting of exam canceled"
+msgstr ""
+
 #: view/student.py:51
 msgid "First Name field is required"
 msgstr ""
@@ -401,10 +445,6 @@ msgstr ""
 
 #: view/student.py:110
 msgid "Adding the student canceled"
-msgstr ""
-
-#: view/student.py:132
-msgid "Name is mandatory"
 msgstr ""
 
 #: view/student.py:138

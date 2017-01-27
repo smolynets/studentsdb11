@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 04:50+0200\n"
+"POT-Creation-Date: 2017-01-27 06:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,7 +244,9 @@ msgstr "староста"
 msgid ""
 "To make the head of the student must first add it to this group in the "
 "Changes students"
-msgstr "Для того щоб зробити студента  старостою групи, спочатку  додайте  йогог в  цю групу" "Додати  студента"
+msgstr ""
+"Для того щоб зробити студента  старостою групи, спочатку  додайте  йогог в  "
+"цю групуДодати  студента"
 
 #: templates/students/groups_delete.html:5
 msgid "deleting of group"
@@ -371,6 +373,68 @@ msgstr "Ви дійсно бажаєте видалити студента:"
 msgid "ukrainian"
 msgstr "українська"
 
+#: view/exams.py:49 view/student.py:132
+msgid "Name is mandatory"
+msgstr "імя є обовязковим"
+
+#: view/exams.py:54 view/exams.py:118
+#, fuzzy
+#| msgid "Group is mandatory"
+msgid "Group is mandatory!"
+msgstr "група є обовязковою"
+
+#: view/exams.py:64
+#, fuzzy
+#| msgid "Enter the correct date format (eg 1986-03-23"
+msgid "Enter the correct date format (eg. 1986-03-23)"
+msgstr "введіть коректну  дату (нар.1986-03-23)"
+
+#: view/exams.py:74
+#, fuzzy
+#| msgid "Students successfully added"
+msgid "Exam successfully added"
+msgstr "студента додано успішно"
+
+#: view/exams.py:81
+#, fuzzy
+#| msgid "Adding the student canceled"
+msgid "Adding Students canceled"
+msgstr "додавання студента скасовано"
+
+#: view/exams.py:112
+#, fuzzy
+#| msgid "Name is mandatory"
+msgid "Name is mandatory."
+msgstr "імя є обовязковим"
+
+#: view/exams.py:124
+#, fuzzy
+#| msgid "Name is mandatory"
+msgid "Birthday is mandatory."
+msgstr "імя є обовязковим"
+
+#: view/exams.py:134
+#, fuzzy
+#| msgid "editing of exam"
+msgid "editing of exam finished"
+msgstr "редагування екзамену"
+
+#: view/exams.py:137
+#, fuzzy
+#| msgid "editing of exam"
+msgid "editing of exam canceled"
+msgstr "редагування екзамену"
+
+#: view/exams.py:152
+msgid "Exam deleted succefully"
+msgstr ""
+
+#: view/exams.py:154
+#, fuzzy
+#| msgid "deleting of exam"
+msgid "Deleting of exam canceled"
+msgstr "видалити екзамену"
+
 #: view/student.py:51
 msgid "First Name field is required"
 msgstr "імя є обовязковим"
@@ -418,10 +482,6 @@ msgstr "студента додано успішно"
 #: view/student.py:110
 msgid "Adding the student canceled"
 msgstr "додавання студента скасовано"
-
-#: view/student.py:132
-msgid "Name is mandatory"
-msgstr "імя є обовязковим"
 
 #: view/student.py:138
 msgid "Last name is required"

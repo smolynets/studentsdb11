@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from django.utils.translation import ugettext as _
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -46,7 +46,7 @@ def groups_add(request):
       # validate user input
       title = request.POST.get('title', '').strip()
       if not title:
-        errors['title'] = u"Ім'я групи є обов'язковим"
+        errors['title'] = _(u"Name of group is mandatory.")
       else:
         data['title'] = title
       
@@ -55,14 +55,14 @@ def groups_add(request):
         group = Group(**data)
         group.save()
         # redirect to students list
-        return HttpResponseRedirect( u'%s?status_message=Групу успішно додано!'  % reverse('groups'))
+        return HttpResponseRedirect( u'%s?status_message=%!'  % (reverse('groups'), _(u'Group added succefully')))
       else:
         # render form with errors and previous user input
         return render(request, 'students/groups_add_edit.html',
         {'students': Student.objects.all().order_by('last_name'),'errors': errors})
     elif request.POST.get('cancel_button') is not None:
       # redirect to home page on cancel button
-      return HttpResponseRedirect( u'%s?status_message=Додавання групи скасовано!' % reverse('groups'))
+      return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('groups'), _(u'adding group canceled')))
   else:
    # initial form render
    return render(request, 'students/groups_add_edit.html',
@@ -90,19 +90,19 @@ def groups_edit(request, pk):
         # validate user input
         title = request.POST.get('title', '').strip()
         if not title:
-          errors['title'] = u"Імʼя є обовʼязковим."
+          errors['title'] = _(u"Name is mandatory.")
         else:
           data.title = title
 
         leader = request.POST.get('leader', '').strip()
         if not leader:
-          errors['leader'] = u"Імʼя старости є обовʼязковим."
+          errors['leader'] = _(u"Name of leader is mandatory.")
         else:
           try:
             st = Student.objects.filter(pk=leader)
             data.leader = st[0]
           except:
-            return HttpResponseRedirect( u'%s?status_message=Редагування групи скасовано!Група  не містить студентів!' % reverse('groups'))
+            return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('groups'), _(u'Editing of group canceled. Group hasnt student')))
           
         
         # save student
@@ -110,14 +110,14 @@ def groups_edit(request, pk):
           
           data.save()
           # redirect to students list
-          return HttpResponseRedirect( u'%s?status_message=Групу успішно редаговано!'  % reverse('groups'))
+          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('groups'), _(u'Group edited succefully')))
         else:
           # render form with errors and previous user input
           return render(request, 'students/groups_add_edit.html',
           {'pk': pk,'students': Student.objects.all().order_by('last_name'),'errors': errors})
       elif request.POST.get('cancel_button') is not None:
         # redirect to home page on cancel button
-        return HttpResponseRedirect( u'%s?status_message=Редагування групи скасовано!' % reverse('groups'))
+        return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('groups'), _('Editing group canceled')))
     else:
      # initial form render
      return render(request, 'students/groups_add_edit.html',
@@ -131,11 +131,11 @@ def groups_delete(request, pk):
         if request.POST.get('yes') is not None:
           try:
             groups.delete()
-            return HttpResponseRedirect( u'%s?status_message=Групу  успішно  видалено!'  % reverse('groups'))
+            return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('groups'), _(u'Group deleted succefully')))
           except:
-            return HttpResponseRedirect( u'%s?status_message=Видалення  неможливе,  оскілки  в  даній  групі  є  студенти. Будь - ласка, спочатку  видаліть  студентів!'  % reverse('groups'))
+            return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('groups'), _u('Remove impossible because in the group are students. You must first remove students')))
         elif request.POST.get('cancel_button') is not None:
-          return HttpResponseRedirect( u'%s?status_message=Видалення  групи  скасовано!'  % reverse('groups'))
+          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('groups'), _(u'Deleting group canceled')))
         
     else:
         return render(request,

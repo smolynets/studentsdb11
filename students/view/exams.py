@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from django.utils.translation import ugettext as _
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -46,22 +46,22 @@ def exam_add(request):
       # validate user input
       title = request.POST.get('title', '').strip()
       if not title:
-        errors['title'] = u"Ім'я є обов'язковим"
+        errors['title'] = _(u"Name is mandatory")
       else:
         data['title'] = title
       group = request.POST.get('group', '').strip()
       if not group:
-        errors['group'] = u"Група  є обовязковою!"
+        errors['group'] = _(u"Group is mandatory!")
       else:
         data['group'] = Group.objects.get(pk=group)
       date = request.POST.get('date', '').strip()
       if not date:
-        errors['date'] = u"Дата є обов'язковою"
+        errors['date'] = u"Date is mandatory"
       else:
         try:
           datetime.strptime(date, '%Y-%m-%d')
         except Exception:
-          errors['date'] = u"Введіть коректний формат дати (напр. 1986-03-23)"
+          errors['date'] = _(u"Enter the correct date format (eg. 1986-03-23)")
         else:
           data['date'] = date
       
@@ -71,14 +71,14 @@ def exam_add(request):
         exam = Exam(**data)
         exam.save()
         # redirect to students list
-        return HttpResponseRedirect( u'%s?status_message=Екзамен успішно додано!'  % reverse('exams'))
+        return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('exams'), _(u"Exam successfully added")))
       else:
         # render form with errors and previous user input
         return render(request, 'students/exam_add.html',
         {'groups': Group.objects.all().order_by('title'),'errors': errors})
     elif request.POST.get('cancel_button') is not None:
       # redirect to home page on cancel button
-      return HttpResponseRedirect( u'%s?status_message=Додавання екзамена скасовано!' % reverse('exams'))
+      return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('exams'), _(u"Adding Students canceled")))
   else:
    # initial form render
    return render(request, 'students/exam_add.html',
@@ -109,19 +109,19 @@ def exam_edit(request, pk):
 
             title = request.POST.get('title', '').strip()
             if not title:
-                errors['title'] = u"Імʼя є обовʼязковим."
+                errors['title'] = _(u"Name is mandatory.")
             else:
                 data.title = title
 
             group = request.POST.get('group', '').strip()
             if not group:
-                errors['group'] = u"Група є обовязковою!"
+                errors['group'] = _(u"Group is mandatory!")
             else:
                 data.group = Group.objects.get(pk=group)
 
             date = request.POST.get('date', '').strip()
             if not date:
-                errors['date'] = u"Дата народження є обовʼязковою."
+                errors['date'] = _(u"Birthday is mandatory.")
             else:
                 
                 data.date = date
@@ -131,10 +131,10 @@ def exam_edit(request, pk):
                 return render(request, 'students/exam_edit.html', {'pk': pk, 'exam': data, 'errors': errors, 'groups': groups})
             else:
                 data.save()
-                return HttpResponseRedirect(u'%s?status_message=Редагування екзамена  завершено' % reverse('exams'))
+                return HttpResponseRedirect(u'%s?status_message=%s' % (reverse('exams'), _(u'editing of exam finished')))
         elif request.POST.get('cancel_button') is not None:
 
-            return HttpResponseRedirect(u'%s?status_message=Редагування студента скасовано!' % reverse('main'))
+            return HttpResponseRedirect(u'%s?status_message=%s' % (reverse('main'), _(u'editing of exam canceled')))
         
     else:
         return render(request,
@@ -149,10 +149,10 @@ def exam_delete(request, pk):
     if request.method == "POST":
         if request.POST.get('yes') is not None:
           exams.delete()
-          return HttpResponseRedirect( u'%s?status_message=Екзамен успішно видалено!'  % reverse('exams'))
+          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('exams'), _(u'Exam deleted succefully')))
         elif request.POST.get('cancel_button') is not None:
-          return HttpResponseRedirect( u'%s?status_message=Видалення  екзамену  скасовано!'  % reverse('exams'))
-        
+          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('exams'), _(u'Deleting of exam canceled')))
+      
     else:
         return render(request,
                       'students/exam_delete.html',

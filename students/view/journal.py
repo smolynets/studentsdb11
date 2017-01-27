@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from calendar import monthrange, weekday, day_abbr
@@ -29,7 +28,7 @@ class JournalView(TemplateView):
       context['next_month'] = next_month.strftime('%Y-%m-%d')
       context['year'] = month.year
       context['month_verbose'] = month.strftime('%B')
-      # we’ll use this variable in students pagination
+      # we'll use this variable in students pagination
       context['cur_month'] = month.strftime('%Y-%m-%d')
       # prepare variable for template to generate
       # journal table header elements
