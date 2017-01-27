@@ -1,7 +1,8 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}Студенти{% endblock meta_title %}
-{% block title %}Журнал подій{% endblock title %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
+{% block title %}{% trans "Events log" %}{% endblock title %}
 {% block content %}
 
 <!-- Start Students Listing -->
@@ -17,16 +18,16 @@
 </th>
 <th>
 <a href="{% url "logs" %}">
-Рівень
+{% trans "level" %}
 </a>
 </th>
 <th>
 <a href="{% url "logs" %}">
-Час
+{% trans "time" %}
 </th>
 <th>
 <a href="{% url "logs" %}">
-Деталі
+{% trans "details" %}
 </a>
 </th>
 </thead>

@@ -1,14 +1,15 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}Студенти{% endblock meta_title %}
-{% block title %}Видалення  групи {{group.title}}{% endblock title %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
+{% block title %}{% trans "deleting of group" %} {{group.title}}{% endblock title %}
 {% block status_message %}
 {% if errors %}
 
 {% endif %}
 {% endblock status_message %}
 {% block content %}
-<p>Ви бажаєте  дійсно видалити {{group.title}}?</p>
+<p>{% trans "Do yuo realy to want delete" % {{group.title}}?</p>
 <p></p>
 <form action="{% url "groups_delete" pk %}" method="post"
 enctype="multipart/form-data" role="form" class="form-horizontal">
@@ -17,10 +18,10 @@ enctype="multipart/form-data" role="form" class="form-horizontal">
 <div class="form-group">
 <label class="col-sm-2 control-label"></label>
 <div class="col-sm-10">
-<input type="submit" value="Видалити" name="yes"
+<input type="submit" value="{% trans "delete" %}" name="yes"
 class="btn btn-primary" />
 <button type="submit" name="cancel_button"
-class="btn btn-link">Скасувати</button>
+class="btn btn-link">{% trans "cancel" %}</button>
 </div>
 </div>
 </form>

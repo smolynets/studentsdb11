@@ -1,9 +1,10 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}Студенти{% endblock meta_title %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
 {% block title %}Студенти групи {{group.title}}{% endblock title %}
 {% block content %}
-<a href="{% url "s_add" %}" class="btn btn-primary">Додати Студента</a>
+<a href="{% url "s_add" %}" class="btn btn-primary">{% trans "add student" %}</a>
 <!-- Start Students Listing -->
 <table class="table">
 
@@ -21,7 +22,7 @@
 <th>Фото</th>
 <th>
 <a href="{% url "main" %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
-Прізвище
+{% trans "last name" %}
 {% if order_by == 'last_name' and reverse != '1' %}&uarr;
 {% elif order_by == 'last_name' and reverse == '1' %}&darr;
 {% endif %}
@@ -29,19 +30,19 @@
 </th>
 <th>
 <a href="{% url "main" %}?order_by=first_name{% if order_by == 'first_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
-Ім'я
+{% trans "first name" %}
 {% if order_by == 'first_name' and reverse != '1' %}&uarr;
 {% elif order_by == 'first_name' and reverse == '1' %}&darr;
 {% endif %}
 </th>
 <th>
 <a href="{% url "main" %}?order_by=ticket{% if order_by == 'ticket' and reverse != '1' %}&amp;reverse=1{% endif %}">
-Група
+{% trans "group" %}
 {% if order_by == 'ticket' and reverse != '1' %}&uarr;
 {% elif order_by == 'ticket' and reverse == '1' %}&darr;
 {% endif %}
 </th>
-<th>Дії</th>
+<th>{% trans "actions" %}</th>
 </tr>
 </thead>
 {% endwith %}
@@ -65,14 +66,14 @@ height="30" width="30" />
 <td>
 <div class="btn-group">
 <button type="button" class="btn btn-default dropdown-toggle"
-data-toggle="dropdown">Дія
+data-toggle="dropdown">{% trans "action" %}
 <span class="caret"></span>
 </button>
 <ul class="dropdown-menu" role="menu">
-<li><a href="{% url "students_edit" student.id %}">Редагувати</a></li>
-<li><a href="/journal/{{ student.id }}">Відвідування</a>
+<li><a href="{% url "students_edit" student.id %}">{% trans "edit" %}</a></li>
+<li><a href="/journal/{{ student.id }}">{% trans "visiting" %}</a>
 </li>
-<li><a href="{% url "students_delete" student.id %}">Видалити</a></li>
+<li><a href="{% url "students_delete" student.id %}">{% trans "delete" %}</a></li>
 </ul>
 </div>
 </td>

@@ -1,9 +1,10 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}Студенти{% endblock meta_title %}
-{% block title %}База Студентів{% endblock title %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
+{% block title %}{% trans "students base" %}{% endblock title %}
 {% block content %}
-<a href="{% url "exam_add" %}" class="btn btn-primary">Додати екзамен</a>
+<a href="{% url "exam_add" %}" class="btn btn-primary">{% trans "add exam" %}</a>
 <!-- Start Students Listing -->
 <table class="table">
 
@@ -20,7 +21,7 @@
 </th>
 <th>
 <a href="{% url "exams" %}?order_by=title{% if order_by == 'title' and reverse != '1' %}&amp;reverse=1{% endif %}">
-Назва
+{% trans "name" %}
 {% if order_by == 'title' and reverse != '1' %}&uarr;
 {% elif order_by == 'title' and reverse == '1' %}&darr;
 {% endif %}
@@ -28,19 +29,19 @@
 </th>
 <th>
 <a href="{% url "exams" %}?order_by=group{% if order_by == 'group' and reverse != '1' %}&amp;reverse=1{% endif %}">
-Група
+{% trans "group" %}
 {% if order_by == 'group' and reverse != '1' %}&uarr;
 {% elif order_by == 'group' and reverse == '1' %}&darr;
 {% endif %}
 </th>
 <th>
 <a href="{% url "exams" %}?order_by=date{% if order_by == 'date' and reverse != '1' %}&amp;reverse=1{% endif %}">
-Дата
+{% trans "date" %}
 {% if order_by == 'date' and reverse != '1' %}&uarr;
 {% elif order_by == 'date' and reverse == '1' %}&darr;
 {% endif %}
 </th>
-<th>Дії</th>
+<th>{% trans "actions" %}</th>
 </tr>
 </thead>
 {% endwith %}
@@ -55,12 +56,12 @@
 <td>
 <div class="btn-group">
 <button type="button" class="btn btn-default dropdown-toggle"
-data-toggle="dropdown">Дія
+data-toggle="dropdown">{% trans "action" %}
 <span class="caret"></span>
 </button>
 <ul class="dropdown-menu" role="menu">
-<li><a href="{% url "exam_edit" exam.id %}">Редагувати</a></li>
-<li><a href="{% url "exam_delete" exam.id %}">Видалити</a></li>
+<li><a href="{% url "exam_edit" exam.id %}">{% trans "edit" %}</a></li>
+<li><a href="{% url "exam_delete" exam.id %}">{% trans "delete" %}</a></li>
 </ul>
 </div>
 </td>

@@ -1,33 +1,33 @@
 {% extends "students/base.html" %}
 {% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}Облік Відвідування{% endblock meta_title %}
-{% block title %}Облік Відвідування{% endblock title %}
+{% block meta_title %}{% trans "Accounting Visits" %}{% endblock meta_title %}
+{% block title %}{% trans "Accounting Visits" %}{% endblock title %}
 {% block content %}
 {% if not students %}
-<div class=”alert alert-warning”>
-Поки немає жодного студента в базі. Будь-ласка,
-<a href="{% url "s_add" %}">додайте</a> першого.
+<div class="alert alert-warning">
+{% trans "While no student in the database. Please first" %}!
+<a href="{% url "s_add" %}">{% trans "Add" %}?</a>
 </div>
 {% else %}
 <div class="alert alert-warning">
-    Зміни в  журнал  зберігаються  при кліку в  таблицю!
-    <span id="ajax-progress-indicator"> Йде збереження </span>
+    {% trans "Changes to the log kept at a table click" %}!
+    <span id="ajax-progress-indicator"> {% trans "There preservation" %} </span>
 </div>
 <p id="journal-nav" class="text-center">
 <a href="?month={{ prev_month }}"
-title="Попередній Місяць">&larr;</a>
+title="{% trans "previous month" %}">&larr;</a>
 <!-- TODO: translate month name -->
 <strong>{{ month_verbose }} {{ year }}</strong>
 <a href="?month={{ next_month }}"
-title="Наступний Місяць">&rarr;</a>
+title="{% trans "next month" %}">&rarr;</a>
 </p>
 <table class="table table-hover table-striped table-bordered"
 id="students-journal">
 <thead>
 <tr class="header">
 <th class="num">#</th>
-<th class="name">Студент</th>
+<th class="name">{% trans "student" %}</th>
 {% for day in month_header %}
 <th class="day-header">
 {% trans day.verbose %}
@@ -49,7 +49,7 @@ id="students-journal">
 {% endif %}
 </td>
 <td>
-<a title="Редагувати" target="_blank"
+<a title="{% trans "edit" %}" target="_blank"
 href="{% url "students_edit" student.id %}">
 {{ student.fullname }}
 </a>

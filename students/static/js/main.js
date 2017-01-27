@@ -116,9 +116,9 @@ function initLangSelector() {
     $('#lang-selector select').change(function(event){
         var lan = $(this).val();
         if (lan) {
-            $.cookie('current_lang', lan, {'path': '/', 'expires': 365});
+            $.cookie('django_language', lan, {'path': '/', 'expires': 365});
         } else {
-            $.removeCookie('current_lang', {'path': '/'});
+            $.removeCookie('django_language', {'path': '/'});
         }
         location.reload(true);
         return true;

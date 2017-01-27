@@ -1,17 +1,18 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}Студенти{% endblock meta_title %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
 {% block title %}
 {% if group %}
-<div id="title_form_edit">Редагування групи {{group.title}}</div>
+<div id="title_form_edit">{% trans "editing group" %} {{group.title}}</div>
 {% else %}
-<div id="title_form_add">Додавання групи</div>
+<div id="title_form_add">{% trans "adding group" %}</div>
 {% endif %}
 {% endblock title %}
 {% block status_message %}
 {% if errors %}
 <div class="alert alert-warning" role="alert">
-Будь-ласка, виправте наступні помилки
+{% trans "Please, correct next errors!" %}
 </div>
 {% endif %}
 {% endblock status_message %}
@@ -26,7 +27,7 @@ action="{% url "groups_add" %}"
 enctype="multipart/form-data" role="form" class="form-horizontal">
 {% csrf_token %}
 <div class="form-group {% if errors.title %}has-error{% endif%}">
-<label for="title" class="col-sm-2 control-label">Назва  групи*</label>
+<label for="title" class="col-sm-2 control-label">{% trans "name of group" %}*</label>
 <div class="col-sm-10">
 {% if group %}
 <input type="text" value="{{group.title}}" name="title" id="title" class="form-control" />
@@ -39,7 +40,7 @@ name="title" id="title" class="form-control" />
 </div>
 {% if group %}
 <div class="form-group {% if errors.leader %}has-error{% endif%}">
-<label for="leader" class="col-sm-2 control-label">Староста*</label>
+<label for="leader" class="col-sm-2 control-label">{% trans "leader" %}*</label>
 <div class="col-sm-10">
 <select name="leader" id="leader" 
 class="form-control">
@@ -54,7 +55,7 @@ class="form-control">
 {% endif %}
 
 <div class="form-group {% if errors.notes %}has-error{% endif%}">
-<label for="notes" class="col-sm-2 control-label">Додаткові Нотатки</label>
+<label for="notes" class="col-sm-2 control-label">{% trans "additional notes" %}</label>
 <div class="col-sm-10">
 {% if group %}
 <textarea value="{{group.notes}}" name="notes" id="notes" class="form-control"></textarea>
@@ -67,19 +68,19 @@ class="form-control">
 <label class="col-sm-2 control-label"></label>
 <div class="col-sm-10">
 {% if group %}
-<input type="submit" value="Зберегти" name="add_button"
+<input type="submit" value="{% trans "save" %}" name="add_button"
 class="btn btn-primary" />
 <button type="submit" name="cancel_button"
-class="btn btn-link">Скасувати</button>
+class="btn btn-link">{% trans "cancel" %}</button>
 {% else %}
 <input type="submit" value="Додати" name="add_button"
 class="btn btn-primary" />
 <button type="submit" name="cancel_button"
-class="btn btn-link">Скасувати</button>
+class="btn btn-link">{% trans "cancel" %}</button>
 {% endif %}
 </div>
 </div>
 </form>
-Поля, позначені  зірочкою,  обовязкові  для  заповнення!
-Для  внесення студента старостою групи  його  потрібно  спочатку  додати  в  дану  групу  в  розділі "редагвання  студентів"!
+{% trans "Fields marked with an asterisk are obligatory for filling" %}!
+{% trans "To make the head of the student must first add it to this group in the Changes students" %}
 {% endblock content %}

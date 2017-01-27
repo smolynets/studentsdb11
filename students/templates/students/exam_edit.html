@@ -1,12 +1,13 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 {% load static from staticfiles %}
 {% load crispy_forms_tags %}
-{% block meta_title %}Студенти{% endblock meta_title %}
-{% block title %}Редагування іспиту  {{exam.title}}{% endblock title %}
+{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
+{% block title %}{% trans "editing of exam" %}  {{exam.title}}{% endblock title %}
 {% block status_message %}
 {% if errors %}
 <div class="alert alert-warning" role="alert">
-Будь-ласка, виправте наступні помилки
+{% trans "Please, correct next errors!" %}
 </div>
 {% endif %}
 {% endblock status_message %}
@@ -14,14 +15,14 @@
 <form enctype="multipart/form-data" class="form-horizontal" action="{% url "exam_edit" pk %}" method="post">
     {% csrf_token %}
     <div class="form-group{% if errors.title %} has-error{% endif %}">
-        <label for="" class="control-label col-sm-2">Імʼя*</label>
+        <label for="" class="control-label col-sm-2">{% trans "name" %}*</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" name="title" id="title" value="{{exam.title}}">
             <span class="help-block"> {{ errors.title }}</span>
         </div>
     </div>
     <div class="form-group{% if errors.group %} has-error{% endif %}">
-        <label for="" class="control-label col-sm-2">Група*</label>
+        <label for="" class="control-label col-sm-2">{% trans "group" %}*</label>
         <div class="col-sm-10">
             <select class="form-control" name="group" id="group">
                 
@@ -33,7 +34,7 @@
         </div>
     </div>
     <div class="form-group{% if errors.date %} has-error{% endif %}">
-        <label for="" class="control-label col-sm-2">Дата*</label>
+        <label for="" class="control-label col-sm-2">{% trans "date" %}*</label>
         <div class="col-sm-10">
             <input type="text" class="dateinput form-control" class="form-control" name="date" id="date" value="{{exam.date|date:"Y-m-d"}}">
             <span class="help-block"> {{ errors.date }}</span>
@@ -42,10 +43,10 @@
     <div class="form-group">
         <label for="" class="control-label col-sm-2"></label>
         <div class="col-sm-10">
-            <input class="btn btn-primary" type="submit" value="Зберегти" name="add_button"/>
-            <button class="btn btn-link" type="submit" name="cancel_button">Скасувати</button>
+            <input class="btn btn-primary" type="submit" value="{% trans "save" %}" name="add_button"/>
+            <button class="btn btn-link" type="submit" name="cancel_button">{% trans "cancel" %}</button>
         </div>
         </div>
 </form>
-Поля, позначені  зірочкою,  обовязкові  для  заповнення!
+{% trans "Fields marked with an asterisk are obligatory for filling" %}!
 {% endblock content %}

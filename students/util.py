@@ -1,4 +1,8 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.utils.translation import ugettext as _
+
+
+
 def paginate(objects, size, request, context, var_name='object_list'):
     """Paginate objects provided by view.
     This function takes:
@@ -66,7 +70,13 @@ def get_current_group(request):
 
 
 def get_lang(request):
-  pk = request.COOKIES.get('current_lang')
-  return pk
+  if request.COOKIES.get('django_language') == 'en':
+     pk = 'english'
+     return pk
+  elif request.COOKIES.get('django_language') == 'uk':
+     pk = _(u'ukrainian')
+     return pk
+  else:
+     return None
 
   
