@@ -9,8 +9,11 @@ from datetime import datetime
 from django.contrib import messages
 from PIL import Image
 from ..util import get_current_group
+from ..util import stud
 def students_list(request):
    current_group = get_current_group(request)
+   st = Student.objects.all()
+   con = len(st)
    if current_group:
       students = Student.objects.filter(student_group_id=current_group)
    else:   
@@ -34,7 +37,7 @@ def students_list(request):
      # last page of results.
      students = paginator.page(paginator.num_pages)
    return render(request, 'students/stud.html',
-     {'students': students})
+     {'students': students, 'con': con})
 
 def stud_add(request):
   # was form posted?

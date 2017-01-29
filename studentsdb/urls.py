@@ -17,6 +17,7 @@ from django.conf.urls import patterns, include,url
 from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 from students.view.journal import JournalView
+from students.view.exams import ExamList,ExamCreate, ExamUpdate, ExamDelete
 
 js_info_dict = {
 'packages': ('students',),
@@ -42,12 +43,10 @@ url(r'^groups/(?P<pk>\d+)/one/$',
 'students.view.group.groups_one', name='groups_one'),
 url(r'^admin/', include(admin.site.urls)),
 #exams url
-url(r'^exams$', 'students.view.exams.exams_list', name='exams'),
-url(r'^exam_add$', 'students.view.exams.exam_add', name='exam_add'),
-url(r'^exams/(?P<pk>\d+)/edit/$',
-'students.view.exams.exam_edit', name='exam_edit'),
-url(r'^exams/(?P<pk>\d+)/delete/$',
-'students.view.exams.exam_delete', name='exam_delete'),
+url(r'^exams$', ExamList.as_view(), name='exams'),
+url(r'^exam_add$',ExamCreate.as_view(), name='exam_add'),
+url(r'^exams/(?P<pk>\d+)/edit/$',ExamUpdate.as_view(), name='exam_edit'),
+url(r'^exams/(?P<pk>\d+)/delete/$',ExamDelete.as_view(), name='exam_delete'),
 #logs
 url(r'^logs$', 'students.view.logs.logs', name='logs'),
 # Contact Admin Form

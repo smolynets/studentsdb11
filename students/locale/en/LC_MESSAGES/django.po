@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 22:06+0200\n"
+"POT-Creation-Date: 2017-01-29 15:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,8 +33,7 @@ msgstr ""
 msgid "Exams"
 msgstr ""
 
-#: models/exam.py:11 models/group.py:11 templates/students/exam_add.html:18
-#: templates/students/exam_edit.html:18 templates/students/exams.html:24
+#: models/exam.py:11 models/group.py:11 templates/students/exams.html:24
 msgid "name"
 msgstr ""
 
@@ -47,10 +46,9 @@ msgid "dates"
 msgstr ""
 
 #: models/group.py:6 models/student.py:35 templates/students/base.html:38
-#: templates/students/exam_add.html:31 templates/students/exam_edit.html:25
 #: templates/students/exams.html:32 templates/students/groups_one.html:40
 #: templates/students/groups_one_null.html:5 templates/students/grup.html:31
-#: templates/students/stud.html:40
+#: templates/students/stud.html:41
 #: templates/students/students_add_edit.html:113
 msgid "group"
 msgstr ""
@@ -89,7 +87,7 @@ msgstr ""
 msgid "Students"
 msgstr ""
 
-#: models/student.py:12 templates/students/stud.html:33
+#: models/student.py:12 templates/students/stud.html:34
 msgid "first_name"
 msgstr ""
 
@@ -105,7 +103,7 @@ msgstr ""
 msgid "birthday"
 msgstr ""
 
-#: models/student.py:28 templates/students/stud.html:22
+#: models/student.py:28 templates/students/stud.html:23
 #: templates/students/students_add_edit.html:83
 msgid "photo"
 msgstr ""
@@ -128,11 +126,11 @@ msgid "all students"
 msgstr ""
 
 #: templates/students/base.html:55 templates/students/groups_one.html:74
-#: templates/students/grup.html:64 templates/students/stud.html:74
+#: templates/students/grup.html:64 templates/students/stud.html:75
 msgid "visiting"
 msgstr ""
 
-#: templates/students/base.html:57 templates/students/exam_add.html:4
+#: templates/students/base.html:57
 msgid "exams"
 msgstr ""
 
@@ -144,8 +142,7 @@ msgstr ""
 msgid "log journal"
 msgstr ""
 
-#: templates/students/contact.html:5 templates/students/exam_delete.html:4
-#: templates/students/exam_edit.html:5 templates/students/exams.html:4
+#: templates/students/contact.html:5 templates/students/exams.html:4
 #: templates/students/groups_add.html:4
 #: templates/students/groups_add_edit.html:4
 #: templates/students/groups_delete.html:4
@@ -162,94 +159,44 @@ msgstr ""
 msgid "conection with administration of site"
 msgstr ""
 
-#: templates/students/contact.html:10 templates/students/exam_add.html:9
-#: templates/students/exam_edit.html:10 templates/students/groups_add.html:9
+#: templates/students/contact.html:10 templates/students/groups_add.html:9
 #: templates/students/groups_add_edit.html:15
 msgid "Please, correct next errors!"
 msgstr ""
 
-#: templates/students/exam_add.html:5
-msgid "adding exams"
-msgstr ""
-
-#: templates/students/exam_add.html:49
-msgid "exampel"
-msgstr ""
-
-#: templates/students/exam_add.html:58 templates/students/groups_add.html:36
-#: templates/students/students_add_edit.html:154
-msgid "add"
-msgstr ""
-
-#: templates/students/exam_add.html:61 templates/students/exam_delete.html:24
-#: templates/students/exam_edit.html:47 templates/students/groups_add.html:39
-#: templates/students/groups_add_edit.html:74
-#: templates/students/groups_add_edit.html:79
-#: templates/students/groups_delete.html:24
-#: templates/students/students_add_edit.html:152
-#: templates/students/students_add_edit.html:157
-#: templates/students/students_delete.html:24
-msgid "cancel"
-msgstr ""
-
-#: templates/students/exam_add.html:65 templates/students/exam_edit.html:51
-#: templates/students/groups_add.html:43
-#: templates/students/groups_add_edit.html:84
-#: templates/students/students_add_edit.html:162
-msgid "Fields marked with an asterisk are obligatory for filling"
-msgstr ""
-
-#: templates/students/exam_delete.html:5
-msgid "deleting of exam"
-msgstr ""
-
-#: templates/students/exam_delete.html:12
-msgid "Do yuo realy to want delete"
-msgstr ""
-
-#: templates/students/exam_delete.html:21 templates/students/exams.html:64
-#: templates/students/groups_delete.html:21
-#: templates/students/groups_one.html:76 templates/students/grup.html:65
-#: templates/students/students_add_edit.html:88
-#: templates/students/students_delete.html:21
-msgid "delete"
-msgstr ""
-
-#: templates/students/exam_edit.html:6
-msgid "editing of exam"
-msgstr ""
-
-#: templates/students/exam_edit.html:37 templates/students/exams.html:39
-msgid "date"
-msgstr ""
-
-#: templates/students/exam_edit.html:46
-#: templates/students/groups_add_edit.html:71
-msgid "save"
-msgstr ""
-
-#: templates/students/exams.html:5
-msgid "students base"
+#: templates/students/exams.html:5 templates/students/stud.html:5
+msgid "Base of students"
 msgstr ""
 
 #: templates/students/exams.html:7
 msgid "add exam"
 msgstr ""
 
+#: templates/students/exams.html:39
+msgid "date"
+msgstr ""
+
 #: templates/students/exams.html:44 templates/students/groups_one.html:45
-#: templates/students/grup.html:45 templates/students/stud.html:45
+#: templates/students/grup.html:45 templates/students/stud.html:46
 msgid "actions"
 msgstr ""
 
 #: templates/students/exams.html:59 templates/students/groups_one.html:69
-#: templates/students/grup.html:59 templates/students/stud.html:69
+#: templates/students/grup.html:59 templates/students/stud.html:70
 msgid "action"
 msgstr ""
 
 #: templates/students/exams.html:63 templates/students/groups_one.html:73
 #: templates/students/grup.html:63 templates/students/journal.html:52
-#: templates/students/stud.html:73
+#: templates/students/stud.html:74
 msgid "edit"
+msgstr ""
+
+#: templates/students/exams.html:64 templates/students/groups_delete.html:21
+#: templates/students/groups_one.html:76 templates/students/grup.html:65
+#: templates/students/students_add_edit.html:88
+#: templates/students/students_delete.html:21
+msgid "delete"
 msgstr ""
 
 #: templates/students/groups_add.html:5
@@ -267,8 +214,35 @@ msgstr ""
 msgid "additional notes"
 msgstr ""
 
+#: templates/students/groups_add.html:36
+#: templates/students/students_add_edit.html:154
+msgid "add"
+msgstr ""
+
+#: templates/students/groups_add.html:39
+#: templates/students/groups_add_edit.html:74
+#: templates/students/groups_add_edit.html:79
+#: templates/students/groups_delete.html:24
+#: templates/students/students_add_edit.html:152
+#: templates/students/students_add_edit.html:157
+#: templates/students/students_delete.html:24 view/exams.py:82
+#: view/exams.py:128
+msgid "cancel"
+msgstr ""
+
+#: templates/students/groups_add.html:43
+#: templates/students/groups_add_edit.html:84
+#: templates/students/students_add_edit.html:162
+msgid "Fields marked with an asterisk are obligatory for filling"
+msgstr ""
+
 #: templates/students/groups_add_edit.html:7
 msgid "editing group"
+msgstr ""
+
+#: templates/students/groups_add_edit.html:71 view/exams.py:81
+#: view/exams.py:127
+msgid "save"
 msgstr ""
 
 #: templates/students/groups_add_edit.html:85
@@ -281,11 +255,11 @@ msgstr ""
 msgid "deleting of group"
 msgstr ""
 
-#: templates/students/groups_one.html:7 templates/students/stud.html:7
+#: templates/students/groups_one.html:7 templates/students/stud.html:8
 msgid "add student"
 msgstr ""
 
-#: templates/students/groups_one.html:25 templates/students/stud.html:25
+#: templates/students/groups_one.html:25 templates/students/stud.html:26
 #: templates/students/students_add_edit.html:46
 msgid "last name"
 msgstr ""
@@ -351,11 +325,11 @@ msgstr ""
 msgid "details"
 msgstr ""
 
-#: templates/students/stud.html:5
-msgid "Base of students"
+#: templates/students/stud.html:7
+msgid "In the base"
 msgstr ""
 
-#: templates/students/stud.html:76
+#: templates/students/stud.html:77
 msgid "students_delete"
 msgstr ""
 
@@ -388,67 +362,55 @@ msgstr ""
 msgid "Do you really want to delete group:"
 msgstr ""
 
-#: util.py:77
+#: util.py:80
 msgid "ukrainian"
 msgstr ""
 
-#: view/contact_admin.py:29
+#: view/contact_admin.py:27
+msgid "Send"
+msgstr ""
+
+#: view/contact_admin.py:30
 msgid "Your email"
 msgstr ""
 
-#: view/contact_admin.py:31
+#: view/contact_admin.py:32
 msgid "Title of list"
 msgstr ""
 
-#: view/contact_admin.py:34
+#: view/contact_admin.py:35
 msgid "Text of massage"
 msgstr ""
 
-#: view/contact_admin.py:55
+#: view/contact_admin.py:52
+msgid "When you send a letter to an unexpected error occurred."
+msgstr ""
+
+#: view/contact_admin.py:56
 msgid "Massage succefuly sended!"
 msgstr ""
 
-#: view/exams.py:49 view/student.py:132
-msgid "Name is mandatory"
+#: view/exams.py:91
+msgid "Exam created sucefully"
 msgstr ""
 
-#: view/exams.py:54 view/exams.py:118
-msgid "Group is mandatory!"
+#: view/exams.py:94
+msgid "Creation of exam canceled"
 msgstr ""
 
-#: view/exams.py:64
-msgid "Enter the correct date format (eg. 1986-03-23)"
+#: view/exams.py:138
+msgid "Exam sucefully edited!"
 msgstr ""
 
-#: view/exams.py:74
-msgid "Exam successfully added"
+#: view/exams.py:141
+msgid "Editing of exam canceled"
 msgstr ""
 
-#: view/exams.py:81
-msgid "Adding Students canceled"
+#: view/exams.py:155
+msgid "Exam deleted sucefully"
 msgstr ""
 
-#: view/exams.py:112 view/group.py:93
-msgid "Name is mandatory."
-msgstr ""
-
-#: view/exams.py:124
-msgid "Birthday is mandatory."
-msgstr ""
-
-#: view/exams.py:134
-msgid "editing of exam finished"
-msgstr ""
-
-#: view/exams.py:137
-msgid "editing of exam canceled"
-msgstr ""
-
-#: view/exams.py:152
-msgid "Exam deleted succefully"
-msgstr ""
-
-#: view/exams.py:154
+#: view/exams.py:158
 msgid "Deleting of exam canceled"
 msgstr ""
 
@@ -462,6 +424,10 @@ msgstr ""
 
 #: view/group.py:65
 msgid "adding group canceled"
+msgstr ""
+
+#: view/group.py:93
+msgid "Name is mandatory."
 msgstr ""
 
 #: view/group.py:99
@@ -488,98 +454,102 @@ msgstr ""
 msgid "Deleting group canceled"
 msgstr ""
 
-#: view/student.py:51
+#: view/student.py:54
 msgid "First Name field is required"
 msgstr ""
 
-#: view/student.py:56
+#: view/student.py:59
 msgid "Last Name field is required"
 msgstr ""
 
-#: view/student.py:61
+#: view/student.py:64
 msgid "Birthday field is required"
 msgstr ""
 
-#: view/student.py:66
+#: view/student.py:69
 msgid "Enter the correct date format (eg 1986-03-23"
 msgstr ""
 
-#: view/student.py:71
+#: view/student.py:74
 msgid "The number of ticket is required"
 msgstr ""
 
-#: view/student.py:76
+#: view/student.py:79
 msgid "Select a group"
 msgstr ""
 
-#: view/student.py:80
+#: view/student.py:83
 msgid "Select a correct group"
 msgstr ""
 
-#: view/student.py:86
+#: view/student.py:89
 msgid "The file must be one of the following types : jpg, jpeg, png, gif"
 msgstr ""
 
-#: view/student.py:91
+#: view/student.py:94
 msgid "The downloaded file is not an image file or corrupted"
 msgstr ""
 
-#: view/student.py:94
+#: view/student.py:97
 msgid "Photo is too large (file size must be less than 2Mb)"
 msgstr ""
 
-#: view/student.py:103
+#: view/student.py:106
 msgid "Students successfully added"
 msgstr ""
 
-#: view/student.py:110
+#: view/student.py:113
 msgid "Adding the student canceled"
 msgstr ""
 
-#: view/student.py:138
+#: view/student.py:135
+msgid "Name is mandatory"
+msgstr ""
+
+#: view/student.py:141
 msgid "Last name is required"
 msgstr ""
 
-#: view/student.py:144
+#: view/student.py:147
 msgid "Date of birth is mandatory"
 msgstr ""
 
-#: view/student.py:149
+#: view/student.py:152
 msgid "Enter the correct date format (eg. 12/30/1987)"
 msgstr ""
 
-#: view/student.py:156
+#: view/student.py:159
 msgid "File too large"
 msgstr ""
 
-#: view/student.py:162
+#: view/student.py:165
 msgid "Room ticket is a must"
 msgstr ""
 
-#: view/student.py:168
+#: view/student.py:171
 msgid "Group is mandatory"
 msgstr ""
 
-#: view/student.py:172
+#: view/student.py:175
 msgid "Select the correct group"
 msgstr ""
 
-#: view/student.py:176
+#: view/student.py:179
 msgid "The student is the head of another group"
 msgstr ""
 
-#: view/student.py:184
+#: view/student.py:187
 msgid "Edit the student has successfully completed"
 msgstr ""
 
-#: view/student.py:187
+#: view/student.py:190
 msgid "Editing student canceled"
 msgstr ""
 
-#: view/student.py:205
+#: view/student.py:208
 msgid "Students successfully removed"
 msgstr ""
 
-#: view/student.py:207
+#: view/student.py:210
 msgid "Removal of the student canceled"
 msgstr ""

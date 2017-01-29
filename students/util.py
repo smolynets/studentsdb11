@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
+
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.translation import ugettext as _
+from .models.student import Student
 
 
 
@@ -78,5 +81,39 @@ def get_lang(request):
      return pk
   else:
      return None
+
+
+
+
+def stud(request):
+  st = Student.objects.all()
+  con = len(st)
+  count = con
+  #pk = get_lang(request)
+  pk = get_lang(request)
+  #if pk == 'ukrainian':
+  if request.COOKIES.get('django_language') == 'uk':
+    if count == 1:
+      ap='студент'
+    elif count > 1 and count<5:
+      ap='студенти'
+    elif count > 4:
+      ap='студентів'
+    elif count == 0:
+      ap='студентів'
+    else:
+      return None
+  elif request.COOKIES.get('django_language') == 'en':
+    if count == 0:
+      ap='student'
+    elif count == 1:
+      ap='student'
+    elif count > 1:
+      ap='students'
+    else:
+      return None
+  else:
+    return None
+  return ap
 
   

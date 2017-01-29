@@ -118,7 +118,8 @@ TEMPLATE_CONTEXT_PROCESSORS = \
 global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 "django.core.context_processors.request",
 "students.context_processors.groups_processor",
-"students.context_processors.lang_processor"
+"students.context_processors.lang_processor",
+"students.context_processors.stud_c"
 )
 
 MEDIA_URL = '/media/'

@@ -25,6 +25,7 @@ class ContactForm(forms.Form):
      self.helper.field_class = 'col-sm-10'
      # form buttons
      self.helper.add_input(Submit('send_button', _(u'Send')))
+     self.helper.attrs = {'novalidate': ''}
   from_email = forms.EmailField(
     label=_(u"Your email"))
   subject = forms.CharField(
