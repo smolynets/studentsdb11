@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'registration',
     'students',
 ]
 
@@ -196,4 +197,6 @@ LOGGING = {
 
    }
 }
+
+REGISTRATION_OPEN = True
 

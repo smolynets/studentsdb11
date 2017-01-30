@@ -19,6 +19,7 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 
 <!-- Start Container -->
 <div class="container">
+
 <div class="col-xs-4" id="lang-selector"> 
 <select> 
 <option value="">{{PK}}</option>
@@ -26,15 +27,13 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 <option value="en">eng</option>  
 </select> 
 </div>
-
-<!-- Start Header -->
-<div class="row" id="header">
-<div class="col-xs-8">
-<h1>{% trans "Students acounting service" %}</h1>
+<div id="user-toolbar">
+{% if user.is_authenticated %}
+<div class="col-xs-2">
+   <span>{{ user.username }}</span> |
+   <a href="#">{% trans "Logout" %}</a>
 </div>
-
-
-<div class="col-xs-4" id="group-selector">
+<div class="col-xs-4">
 <strong>{% trans "group" %}:</strong> 
 <select> 
 <option value="">{% trans "all students" %}</option>
@@ -44,8 +43,21 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 	{% endfor %}
 </option>  
 </select> 
+</div>
+{% else %}
+<!-- User’s toolbar for anonymous users -->
+<div class="col-xs-6" id="user-toolbar">
+  <a href="#">{% trans "Login" %}</a> |
+  <a href="#">{% trans "Register" %}</a>
+</div>
+{% endif %}
 </div> 
-</div> 
+<!-- Start Header -->
+<div class="row" id="header">
+<div class="col-xs-8">
+<h1>{% trans "Students acounting service" %}</h1>
+</div>
+
 <!-- End Header -->
 <!-- Start subheader -->
 <div class="row" id="sub-header">
