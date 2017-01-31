@@ -18,6 +18,8 @@ from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 from students.view.journal import JournalView
 from students.view.exams import ExamList,ExamCreate, ExamUpdate, ExamDelete
+from django.contrib.auth import views as auth_views
+from django.views.generic.base import RedirectView, TemplateView
 
 js_info_dict = {
 'packages': ('students',),
@@ -54,6 +56,10 @@ url(r'^contact-admin/$', 'students.view.contact_admin.contact_admin',
 name='contact_admin'),
 #i18n of js
 url(r'^jsi18n.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
+# User Related urls
+url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'main'}, name='auth_logout'),
+url(r'^register/complete/$', RedirectView.as_view(pattern_name='main'), name='registration_complete'),
+url(r'^users/', include('registration.backends.simple.urls', namespace='users')),
 )
 if DEBUG:
  # serve files from media folder

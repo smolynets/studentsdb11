@@ -200,3 +200,7 @@ LOGGING = {
 
 REGISTRATION_OPEN = True
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'studentsdb', 'templates'),
+)
+

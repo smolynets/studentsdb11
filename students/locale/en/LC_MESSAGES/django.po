@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-29 15:03+0200\n"
+"POT-Creation-Date: 2017-01-31 06:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "dates"
 msgstr ""
 
-#: models/group.py:6 models/student.py:35 templates/students/base.html:38
+#: models/group.py:6 models/student.py:35 templates/students/base.html:37
 #: templates/students/exams.html:32 templates/students/groups_one.html:40
 #: templates/students/groups_one_null.html:5 templates/students/grup.html:31
 #: templates/students/stud.html:41
@@ -53,7 +53,7 @@ msgstr ""
 msgid "group"
 msgstr ""
 
-#: models/group.py:7 templates/students/base.html:56
+#: models/group.py:7 templates/students/base.html:68
 #: templates/students/grup.html:5
 msgid "groups"
 msgstr ""
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: models/student.py:8 templates/students/base.html:54
+#: models/student.py:8 templates/students/base.html:66
 msgid "Students"
 msgstr ""
 
@@ -112,8 +112,8 @@ msgstr ""
 msgid "ticket"
 msgstr ""
 
-#: templates/students/base.html:7 templates/students/base.html.py:33
-#: templates/students/base.html:82
+#: templates/students/base.html:7 templates/students/base.html.py:58
+#: templates/students/base.html:94
 msgid "Students acounting service"
 msgstr ""
 
@@ -121,24 +121,36 @@ msgstr ""
 msgid "Students acounting service of school"
 msgstr ""
 
-#: templates/students/base.html:40
+#: templates/students/base.html:34
+msgid "Logout"
+msgstr ""
+
+#: templates/students/base.html:39
 msgid "all students"
 msgstr ""
 
-#: templates/students/base.html:55 templates/students/groups_one.html:74
+#: templates/students/base.html:50
+msgid "Login"
+msgstr ""
+
+#: templates/students/base.html:51
+msgid "Register"
+msgstr ""
+
+#: templates/students/base.html:67 templates/students/groups_one.html:74
 #: templates/students/grup.html:64 templates/students/stud.html:75
 msgid "visiting"
 msgstr ""
 
-#: templates/students/base.html:57
+#: templates/students/base.html:69
 msgid "exams"
 msgstr ""
 
-#: templates/students/base.html:58
+#: templates/students/base.html:70
 msgid "to contact"
 msgstr ""
 
-#: templates/students/base.html:59
+#: templates/students/base.html:71
 msgid "log journal"
 msgstr ""
 
