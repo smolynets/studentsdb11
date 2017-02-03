@@ -5,11 +5,10 @@ from .model import StProfile
 
 
 class StProfileInline(admin.StackedInline):
-    model = StProfile
+  model = StProfile
 
 class UserAdmin(auth_admin.UserAdmin):
-    inlines = (StProfileInline,)
-
+  inlines = (StProfileInline,)
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
