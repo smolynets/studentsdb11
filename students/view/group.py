@@ -5,6 +5,10 @@ from django.core.urlresolvers import reverse
 from ..models.group import Group
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from ..models.student import Student
+from django.contrib.auth.decorators import login_required
+
+
+
 def grup(request):
    groups = Group.objects.all()
    # try to order grup list
@@ -34,6 +38,10 @@ def groups_delete(request, gid):
 
 
 
+
+
+
+@login_required
 def groups_add(request):
   # was form posted?
   if request.method == "POST":
@@ -71,6 +79,10 @@ def groups_add(request):
 
 
 
+
+
+
+@login_required
 def groups_edit(request, pk):
     groups = Group.objects.filter(pk=pk)
     students = Student.objects.filter(student_group_id=groups)
@@ -124,6 +136,12 @@ def groups_edit(request, pk):
      {'pk': pk, 'group': groups[0], 'students': students})
 
 
+
+
+
+
+
+@login_required
 def groups_delete(request, pk):
     groups = Group.objects.filter(pk=pk)
     

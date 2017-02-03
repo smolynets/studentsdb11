@@ -9,7 +9,9 @@
          <div class="row" id="content-columns">
           <div class="col-xs-12" id="content-column">
              <!--add student button-->
+             {% if user.is_authenticated %}
              <a class="btn btn-primary" href="{% url "groups_add" %}" role="button" id="edd">{% trans "add group" %}</a>
+             {% endif %}
          </div>
          </div>
          <!--start table of students-->
@@ -41,8 +43,10 @@
 {% elif order_by == 'leader' and reverse == '1' %}&darr;
 {% endif %}
 </a>
+{% if user.is_authenticated %}
 </th>
 <th>{% trans "actions" %}</th>
+{% endif %}
 </tr>
 </thead>
 {% endwith %}
@@ -53,6 +57,7 @@
 <td><a href="{% url "groups_one" group.id %}">{{ forloop.counter }}</td>
 <td><a href="{% url "groups_one" group.id %}">{{ group.title }}</td>
 <td><a href="{% url "groups_one" group.id %}">{{ group.leader }}</td>
+{% if user.is_authenticated %}
 <td>
 <div class="btn-group">
 <button type="button" class="btn btn-default dropdown-toggle"
@@ -66,6 +71,7 @@ data-toggle="dropdown">{% trans "action" %}
 </ul>
 </div>
 </td>
+{% endif %}
 {% endfor %}
 </tbody>
 </table>

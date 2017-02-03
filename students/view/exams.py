@@ -12,6 +12,8 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 from crispy_forms.layout import Submit, Button
 from ..util import paginate
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -84,6 +86,7 @@ class ExamCreateForm(ModelForm):
 
 
 class ExamCreate(CreateView):
+
   model = Exam
   template_name = 'students/exam_add.html'
   form_class = ExamCreateForm
@@ -94,6 +97,9 @@ class ExamCreate(CreateView):
       return HttpResponseRedirect(u'%s?status_message=%s'% (reverse('exams'), _(u'Creation of exam canceled')))
     else:
       return super(ExamCreate, self).post(request, *args, **kwargs)
+  @method_decorator(login_required)
+  def dispatch(self, *args, **kwargs):
+    return super(ExamCreate, self).dispatch(*args, **kwargs)
       
          
 
@@ -141,6 +147,9 @@ class ExamUpdate(UpdateView):
       return HttpResponseRedirect(u'%s?status_message=%s'% (reverse('exams'), _(u'Editing of exam canceled')))
     else:
       return super(ExamUpdate, self).post(request, *args, **kwargs)
+  @method_decorator(login_required)
+  def dispatch(self, *args, **kwargs):
+    return super(ExamUpdate, self).dispatch(*args, **kwargs)
 
 
 
@@ -158,6 +167,9 @@ class ExamDelete(DeleteView):
       return HttpResponseRedirect(u'%s?status_message=%s'% (reverse('exams'), _(u'Deleting of exam canceled')))
     else:
       return super(ExamDelete, self).post(request, *args, **kwargs)
+  @method_decorator(login_required)
+  def dispatch(self, *args, **kwargs):
+    return super(ExamDelete, self).dispatch(*args, **kwargs)
     
           
       

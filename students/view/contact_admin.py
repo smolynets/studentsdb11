@@ -8,6 +8,11 @@ from studentsdb.settings import ADMIN_EMAIL
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 import logging
+from django.contrib.auth.decorators import permission_required
+
+
+
+
 class ContactForm(forms.Form):
   def __init__(self, *args, **kwargs):
      # call original initializator
@@ -35,6 +40,8 @@ class ContactForm(forms.Form):
     label=_(u"Text of massage"),
     max_length=2560,
     widget=forms.Textarea)
+
+@permission_required('auth.add_user')  
 def contact_admin(request):
   # check if form was posted
   if request.method == 'POST':

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'registration',
     'students',
+    'studentsdb',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -203,4 +204,8 @@ REGISTRATION_OPEN = True
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'studentsdb', 'templates'),
 )
+
+
+LOGIN_URL = 'users:auth_login'
+LOGOUT_URL = 'users:auth_logout'
 

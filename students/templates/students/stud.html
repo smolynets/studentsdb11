@@ -5,7 +5,9 @@
 {% block title %}{% trans "Base of students" %}{% endblock title %}
 {% block content %}
 <h1><div>{% trans "In the base" %} {{con}} {{stud}}</div></h1>
+{% if user.is_authenticated %}
 <a href="{% url "s_add" %}" class="btn btn-primary">{% trans "add student" %}</a>
+{% endif %}
 <!-- Start Students Listing -->
 <table class="table">
 
@@ -43,7 +45,9 @@
 {% elif order_by == 'ticket' and reverse == '1' %}&darr;
 {% endif %}
 </th>
+{% if user.is_authenticated %}
 <th>{% trans "actions" %}</th>
+{% endif %}
 </tr>
 </thead>
 {% endwith %}
@@ -66,6 +70,7 @@ height="30" width="30" />
 <td>{{ student.student_group_id }}</td>
 <td>
 <div class="btn-group">
+{% if user.is_authenticated %}
 <button type="button" class="btn btn-default dropdown-toggle"
 data-toggle="dropdown">{% trans "action" %}
 <span class="caret"></span>
@@ -76,6 +81,7 @@ data-toggle="dropdown">{% trans "action" %}
 </li>
 <li><a href="{% url "students_delete" student.id %}">{% trans "students_delete" %}</a></li>
 </ul>
+{% endif %}
 </div>
 </td>
 </tr>

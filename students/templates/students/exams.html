@@ -4,7 +4,9 @@
 {% block meta_title %}{% trans "students" %}{% endblock meta_title %}
 {% block title %}{% trans "Base of students" %}{% endblock title %}
 {% block content %}
+{% if user.is_authenticated %}
 <a href="{% url "exam_add" %}" class="btn btn-primary">{% trans "add exam" %}</a>
+{% endif %}
 <!-- Start Students Listing -->
 <table class="table">
 
@@ -41,7 +43,9 @@
 {% elif order_by == 'date' and reverse == '1' %}&darr;
 {% endif %}
 </th>
+{% if user.is_authenticated %}
 <th>{% trans "actions" %}</th>
+{% endif %}
 </tr>
 </thead>
 {% endwith %}
@@ -54,6 +58,7 @@
 <td><a href="{% url "exam_edit" exam.id %}">{{ exam.group }}</td>
 <td><a href="{% url "exam_edit" exam.id %}">{{ exam.date }}</td>
 <td>
+{% if user.is_authenticated %}
 <div class="btn-group">
 <button type="button" class="btn btn-default dropdown-toggle"
 data-toggle="dropdown">{% trans "action" %}
@@ -64,6 +69,7 @@ data-toggle="dropdown">{% trans "action" %}
 <li><a href="{% url "exam_delete" exam.id %}">{% trans "delete" %}</a></li>
 </ul>
 </div>
+{% endif %}
 </td>
 </tr>
 {% endfor %}
@@ -73,5 +79,4 @@ data-toggle="dropdown">{% trans "action" %}
 {% with object_list=exams %}
 {% include "students/pagination.html" %}
 {% endwith %}
-fghgf
 {% endblock content %}

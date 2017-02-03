@@ -6,6 +6,12 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from django.contrib import messages
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
+
+
+
+
+@login_required
 def logs(request):
    logs = logentry.objects.order_by('asctime').reverse()
    # paginate logs

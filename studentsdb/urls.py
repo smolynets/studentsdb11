@@ -20,6 +20,11 @@ from students.view.journal import JournalView
 from students.view.exams import ExamList,ExamCreate, ExamUpdate, ExamDelete
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import RedirectView, TemplateView
+from students.view.student import stud_add, student_edit, student_delete
+from students.view.group import groups_add, groups_edit, groups_delete 
+from students.view.logs import logs
+from students.view.contact_admin import contact_admin
+from django.contrib.auth.decorators import login_required
 
 js_info_dict = {
 'packages': ('students',),
@@ -28,10 +33,10 @@ js_info_dict = {
 urlpatterns = patterns('',
 # Students urls
 url(r'^$', 'students.view.student.students_list', name='main'),
-url(r'^stud_add$', 'students.view.student.stud_add', name='s_add'),
-url(r'^students/(?P<pk>\d+)/edit/$','students.view.student.student_edit',
+url(r'^stud_add$', login_required(stud_add), name='s_add'),
+url(r'^students/(?P<pk>\d+)/edit/$',login_required(student_edit),
 name='students_edit'),
-url(r'^students/(?P<pk>\d+)/delete/$','students.view.student.student_delete',name='students_delete'),
+url(r'^students/(?P<pk>\d+)/delete/$',login_required(student_delete),name='students_delete'),
 #journal
 url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
 #Groups urls
@@ -46,17 +51,19 @@ url(r'^groups/(?P<pk>\d+)/one/$',
 url(r'^admin/', include(admin.site.urls)),
 #exams url
 url(r'^exams$', ExamList.as_view(), name='exams'),
-url(r'^exam_add$',ExamCreate.as_view(), name='exam_add'),
-url(r'^exams/(?P<pk>\d+)/edit/$',ExamUpdate.as_view(), name='exam_edit'),
-url(r'^exams/(?P<pk>\d+)/delete/$',ExamDelete.as_view(), name='exam_delete'),
+url(r'^exam_add$', login_required(ExamCreate.as_view()), name='exam_add'),
+url(r'^exams/(?P<pk>\d+)/edit/$', login_required(ExamUpdate.as_view()), name='exam_edit'),
+url(r'^exams/(?P<pk>\d+)/delete/$', login_required(ExamDelete.as_view()), name='exam_delete'),
 #logs
-url(r'^logs$', 'students.view.logs.logs', name='logs'),
+url(r'^logs$', login_required(logs), name='logs'),
 # Contact Admin Form
-url(r'^contact-admin/$', 'students.view.contact_admin.contact_admin',
+url(r'^contact-admin/$', login_required(contact_admin),
 name='contact_admin'),
 #i18n of js
 url(r'^jsi18n.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
 # User Related urls
+url(r'^users/profile/$', login_required(TemplateView.as_view(
+template_name='registration/profile.html')), name='profile'),
 url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'main'}, name='auth_logout'),
 url(r'^register/complete/$', RedirectView.as_view(pattern_name='main'), name='registration_complete'),
 url(r'^users/', include('registration.backends.simple.urls', namespace='users')),

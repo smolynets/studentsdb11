@@ -30,7 +30,8 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 <div id="user-toolbar">
 {% if user.is_authenticated %}
 <div class="col-xs-2">
-   <span>{{ user.username }}</span> |
+   <a href="{% url "profile" %}">{{ user.username }}</a> 
+   |
    <a href="{% url "users:auth_logout" %}">{% trans "Logout" %}</a>
 </div>
 <div class="col-xs-4">
@@ -67,7 +68,9 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 <li role="presentation" {% if '/journal' in request.path %}class="active"{% endif %}><a href="{% url "journal" %}">{% trans "visiting" %}</a></li>
 <li role="presentation" {% if '/grup' in request.path %}class="active"{% endif %}><a href="{% url "groups" %}">{% trans "groups" %}</a></li>
 <li role="presentation" {% if '/exams' in request.path %}class="active"{% endif %}><a href="{% url "exams" %}">{% trans "exams" %}</a></li>
+{% if perms.auth.add_user %}
 <li role="presentation" {% if '/contact-admin' in request.path %}class="active"{% endif %}><a href="{% url "contact_admin" %}">{% trans "to contact" %}</a></li>
+{% endif %}
 <li role="presentation" {% if '/logs' in request.path %}class="active"{% endif %}><a href="{% url "logs" %}">{% trans "log journal" %}</a></li>
 </ul>
 </div>
@@ -89,9 +92,9 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 </div>
 <!-- End Content Columns -->
 <!-- Start Footer -->
-<div class="row" id="footer">
+<div class="row" id="bottom_page">
 <div class="col-xs-12">
-&copy; 2014 {% trans "Students acounting service" %}
+&copy; 2017 {% trans "Students acounting service" %}
 </div>
 </div>
 <!-- End Footer -->

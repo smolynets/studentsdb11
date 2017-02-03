@@ -9,7 +9,11 @@ from datetime import datetime
 from django.contrib import messages
 from PIL import Image
 from ..util import get_current_group
-from ..util import stud
+from django.contrib.auth.decorators import login_required
+
+
+
+
 def students_list(request):
    current_group = get_current_group(request)
    st = Student.objects.all()
@@ -39,6 +43,13 @@ def students_list(request):
    return render(request, 'students/stud.html',
      {'students': students, 'con': con})
 
+
+
+
+
+
+
+@login_required
 def stud_add(request):
   # was form posted?
   if request.method == "POST":
@@ -118,6 +129,11 @@ def stud_add(request):
 
 
 
+
+
+
+
+@login_required
 def student_edit(request, pk):
     students = Student.objects.filter(pk=pk)
     groups = Group.objects.all()
@@ -198,7 +214,13 @@ def student_edit(request, pk):
 
 
 
+        
 
+
+
+
+
+@login_required
 def student_delete(request, pk):
     students = Student.objects.filter(pk=pk)
     
