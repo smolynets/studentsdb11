@@ -2,9 +2,11 @@
 {% load i18n %}
 {% block meta_title %}{{ user.get_full_name|default:user.username }}
 {% endblock meta_title %}
-{% block title %}{{ user.get_full_name|default:user.username }}{% endblock title %}
+{% block title %}
+{{ user.username }} {% endblock title %} 
 {% block content %}
-<table class="table table-striped">{% if user.email %}
+<table class="table table-striped">
+{% if user.email %}
 <tr>
 <td>{% trans "Email" %}:</td>
 <td>{{ user.email }}</td>
@@ -20,6 +22,18 @@
 <tr>
 <td>{% trans "Joined" %}:</td>
 <td>{{ user.date_joined }}</td>
+</tr>
+{% endif %}
+{% if user.first_name %}
+<tr>
+<td>{% trans "name" %}:</td>
+<td>{{ user.first_name }}</td>
+</tr>
+{% endif %}
+{% if user.last_name %}
+<tr>
+<td>{% trans "surname" %}:</td>
+<td>{{ user.last_name }}</td>
 </tr>
 {% endif %}
 </table>

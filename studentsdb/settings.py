@@ -200,6 +200,7 @@ LOGGING = {
 }
 
 REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 1
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'studentsdb', 'templates'),

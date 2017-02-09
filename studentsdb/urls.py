@@ -25,6 +25,11 @@ from students.view.group import groups_add, groups_edit, groups_delete
 from students.view.logs import logs
 from students.view.contact_admin import contact_admin
 from django.contrib.auth.decorators import login_required
+from registration.backends.default import views as registration_views
+
+
+
+
 
 js_info_dict = {
 'packages': ('students',),
@@ -61,13 +66,20 @@ url(r'^contact-admin/$', login_required(contact_admin),
 name='contact_admin'),
 #i18n of js
 url(r'^jsi18n.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
+
 # User Related urls
 url(r'^users/profile/$', login_required(TemplateView.as_view(
 template_name='registration/profile.html')), name='profile'),
 url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'main'}, name='auth_logout'),
-url(r'^register/complete/$', RedirectView.as_view(pattern_name='main'), name='registration_complete'),
-url(r'^users/', include('registration.backends.simple.urls', namespace='users')),
+url(r'^register/complete/$', TemplateView.as_view(template_name='registration/confirm_email.html'), name='registration_complete'),
+url(r'^users/', include('registration.backends.default.urls', namespace='users')),
+url(r'^users/activate/(?P<activation_key>\w+)/$', registration_views.ActivationView.as_view(),
+name='registration_activate'),
+url(r'^users/activate/complete/$',
+TemplateView.as_view(template_name='registration/activation_complete.html'),
+name='registration_activation_complete'),
 )
+
 if DEBUG:
  # serve files from media folder
  urlpatterns += patterns('',

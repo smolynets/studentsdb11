@@ -4,6 +4,7 @@
 {% block meta_title %}{% trans "students" %}{% endblock meta_title %}
 {% block title %}{% trans "Base of students" %}{% endblock title %}
 {% block content %}
+{{cc}}
 <h1><div>{% trans "In the base" %} {{con}} {{stud}}</div></h1>
 {% if user.is_authenticated %}
 <a href="{% url "s_add" %}" class="btn btn-primary">{% trans "add student" %}</a>
