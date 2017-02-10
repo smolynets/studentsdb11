@@ -78,6 +78,9 @@ name='registration_activate'),
 url(r'^users/activate/complete/$',
 TemplateView.as_view(template_name='registration/activation_complete.html'),
 name='registration_activation_complete'),
+
+# Social Auth Related urls
+url('^social/', include('social.apps.django_app.urls', namespace ='social')),
 )
 
 if DEBUG:
