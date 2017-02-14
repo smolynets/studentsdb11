@@ -48,7 +48,7 @@ href="{{ PORTAL_URL }}{% static "css/main.css" %}">
 {% else %}
 <!-- User’s toolbar for anonymous users -->
 <div class="col-xs-6" id="user-toolbar">
-  <a href=”{% url 'social:begin' 'facebook' %}?next={{ request.path }}">{% trans "Facebook" %}</a>
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">{% trans "Facebook" %}</a>
   |
   <a href="{% url "users:auth_login" %}">{% trans "Login" %}</a> 
   |

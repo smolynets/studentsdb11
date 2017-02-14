@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'registration',
     'social.apps.django_app.default',
     'students',
+    'login',
     'studentsdb',
 ]
 
@@ -206,7 +207,7 @@ REGISTRATION_OPEN = True
 ACCOUNT_ACTIVATION_DAYS = 1
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'studentsdb', 'templates'),
+    os.path.join(BASE_DIR, 'login', 'templates'),
 )
 
 

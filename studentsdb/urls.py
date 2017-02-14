@@ -26,7 +26,9 @@ from students.view.logs import logs
 from students.view.contact_admin import contact_admin
 from django.contrib.auth.decorators import login_required
 from registration.backends.default import views as registration_views
-
+from django.contrib.auth import views as auth_views
+from django.core.urlresolvers import reverse_lazy
+from registration.backends.default.views import RegistrationView
 
 
 
@@ -73,11 +75,22 @@ template_name='registration/profile.html')), name='profile'),
 url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'main'}, name='auth_logout'),
 url(r'^register/complete/$', TemplateView.as_view(template_name='registration/confirm_email.html'), name='registration_complete'),
 url(r'^users/', include('registration.backends.default.urls', namespace='users')),
+url(r'^users/login/', include('registration.auth_urls', namespace='logins')),
 url(r'^users/activate/(?P<activation_key>\w+)/$', registration_views.ActivationView.as_view(),
 name='registration_activate'),
 url(r'^users/activate/complete/$',
 TemplateView.as_view(template_name='registration/activation_complete.html'),
 name='registration_activation_complete'),
+url(r'^password/reset/$',
+                           auth_views.password_reset,
+                           {'post_reset_redirect': reverse_lazy('auth_password_reset_done')},
+                           name='auth_password_reset'),
+url(r'^password/reset/done/$',
+                           auth_views.password_reset_done,
+                           name='auth_password_reset_done'),
+url(r'^register/$',
+            RegistrationView.as_view(),
+            name='registration_register'),
 
 # Social Auth Related urls
 url('^social/', include('social.apps.django_app.urls', namespace ='social')),
